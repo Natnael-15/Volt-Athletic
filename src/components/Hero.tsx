@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, TrendingUp, Users, Target, Shield, Award, Zap, X, ChevronDown } from 'lucide-react';
+import heroImage from '@/src/assets/hero.jpeg';
 
 interface HeroProps {
   onStartTraining: () => void;
@@ -32,7 +33,7 @@ export default function Hero({ onStartTraining, onViewMemberships, onViewClasses
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-steel-bg via-transparent to-black/80 z-10" />
         <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8NpWiBy5lLlMU33QYcVkirMTUb_MS730OtLK76uvQ8_YBkSPkJYv5Tz9K68Osmcp1uxJisB3eI6txt26Ug-lsCayXzWFCrndMev8uLS387xeM8hMSy42JG6T8XcxPCM-TCZzVY32OIDXVyaPymKF-ZKSN3ruUbINz8otXxRmfYC-3KsrFUHZQapjcv3vQt8oB1IOIOxfJwgD8z2AXpxBd1hP_L_EsLVjAAgWlbxvuqMOQf1UoZSXfpDbjVpWQZLDmwkd6Ofi98Y"
+          src={heroImage}
           alt="Athlete doing deadlifts"
           className="w-full h-full object-cover filter brightness-90 contrast-125 object-center grayscale select-none scale-105 pointer-events-none transition-all duration-1000"
           referrerPolicy="no-referrer"

@@ -62,12 +62,12 @@ export default function Navbar({ onJoinClick, activeSection, setActiveSection }:
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8 h-full items-center">
+          <div className="hidden md:flex md:gap-4 lg:gap-8 h-full items-center">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`font-mono text-xs uppercase tracking-widest relative py-2 outline-none cursor-pointer transition-colors ${
+                className={`font-mono text-xs uppercase md:tracking-wider lg:tracking-widest relative py-2 outline-none cursor-pointer transition-colors ${
                   activeSection === item.id
                     ? 'text-neon font-bold'
                     : 'text-gray-400 hover:text-white'
@@ -162,7 +162,7 @@ export default function Navbar({ onJoinClick, activeSection, setActiveSection }:
               </div>
               <div className="p-2 bg-steel-low border border-steel-border/40">
                 <Landmark className="w-4 h-4 mx-auto mb-1 text-neon" />
-                <span className="block">EST. 2024</span>
+                <span className="block">EST. 2026</span>
               </div>
             </div>
           </div>

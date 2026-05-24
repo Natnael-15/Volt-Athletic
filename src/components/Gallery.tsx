@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Maximize2, X, ChevronLeft, ChevronRight, LayoutGrid, Flame, Shield, ArrowRight } from 'lucide-react';
 
+// Import local gallery images
+import galCompoundGrid from '@/src/assets/gal_compound_grid.jpeg';
+import galInfraredSuite from '@/src/assets/gal_infrared_suite.jpeg';
+import galTacticalBoxing from '@/src/assets/trainer_julian.jpeg';
+import galColdPlunge from '@/src/assets/gal_cold_plunge.jpeg';
+import galHypoxicChamber from '@/src/assets/gal_hypoxic_chamber.jpeg';
+import galPerformanceLab from '@/src/assets/gal_performance_lab.jpeg';
+import galKineticRestoration from '@/src/assets/gal_kinetic_restoration.jpeg';
+import galTurfRoad from '@/src/assets/gal_turf_road.jpeg';
+
 interface GalleryItem {
   id: string;
   category: 'facility' | 'recovery' | 'performance';
@@ -24,7 +34,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'THE COMPOUND GRID',
     subtitle: 'Compound Cage Platform 01-04',
     description: 'Custom-calibrated force plate cages equipped with high-dynamic barometric sensors, integrated 3D posture mapping towers, and premium carbon steel plates.',
-    imgUrl: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galCompoundGrid,
     specs: {
       locationCode: 'SECT-01A / GRID-WEST',
       hardware: 'Eleiko Calibrated & Volt 3D Transceiver',
@@ -37,7 +47,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'INFRARED REGENERATION SUITE',
     subtitle: 'High-Density Spectrum Sauna',
     description: 'Therapeutic heat rooms utilising targeted near-to-far infrared wavelengths to excite cellular repair, optimize lymphatic drainage, and reduce joint friction indices.',
-    imgUrl: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galInfraredSuite,
     specs: {
       locationCode: 'RECOV-CHAMBER 02',
       temperature: '85°C Constant',
@@ -50,7 +60,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'TACTICAL BOXING RING',
     subtitle: 'High-Impact Strike Octagon',
     description: 'Soundproof shock-absorbent turf grids centering a full-scale heavy combat sparring canvas. Integrated pressure pads measure deceleration & reaction speed indices in milliseconds.',
-    imgUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galTacticalBoxing,
     specs: {
       locationCode: 'COMBAT-POD 03',
       hardware: 'Cleto-Reyes Custom Gear & Reaction Pads',
@@ -63,7 +73,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'CRYO-SUBMERSION VESSEL',
     subtitle: 'Dual High-Precision Cold Plunges',
     description: 'Active chilled continuous circulation water tunnels calibrated to trigger systemic cold shock responses. Secures acute reductions in vascular inflammation and speeds up ATP synthesis.',
-    imgUrl: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galColdPlunge,
     specs: {
       locationCode: 'RECOV-PLUNGE 01',
       temperature: '3°C Continuous Flow',
@@ -76,7 +86,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'HIGH-ALTITUDE ENDURANCE ZONE',
     subtitle: 'Hypoxic Conditioning Chamber 05',
     description: 'Enclosed aerobic grid running simulated atmospheric air mixtures down to 14.5% O2 (equivalent to 3,000m elevation). Optimises hemoglobin counts and aerobic threshold parameters.',
-    imgUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galHypoxicChamber,
     specs: {
       locationCode: 'SECT-05C / HYPOXIC',
       temperature: '19°C Constant / 14% O2',
@@ -89,7 +99,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'BIOKINETIC ANALYSING LAB',
     subtitle: 'Optical Motion Capture Array',
     description: '8-camera ultra-high frequency optical sensor arrays capturing structural joint translation under sub-maximal loads to capture ligamentous strain beforehand.',
-    imgUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galPerformanceLab,
     specs: {
       locationCode: 'DIAG-LAB 01',
       hardware: 'Vicon Optical Sensors & Volt Mesh',
@@ -102,7 +112,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'KINETIC RESTORATION BAR',
     subtitle: 'Compression & Mobility Turf',
     description: 'Equipped with heavy hyperbaric oxygen chambers, automated Normatec pneumatic compression grids, and soft tissue mobilisation platforms led by clinical physiotherapists.',
-    imgUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galKineticRestoration,
     specs: {
       locationCode: 'RECOV-TURF 04',
       hardware: 'Normatec Pulses & Hyperbaric Pods',
@@ -115,7 +125,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'THE CALIBRATED TURF ROAD',
     subtitle: 'Unidirectional Sprint Grid',
     description: '45-meter high-friction physical sled road formatted with high-contrast positional markings. Continuous load sensors communicate metrics natively to the companion App.',
-    imgUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
+    imgUrl: galTurfRoad,
     specs: {
       locationCode: 'GRID-SOUTH / INT-01',
       hardware: 'Custom High-Density Synthetic Grass',
@@ -292,43 +302,43 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/98 flex flex-col items-center justify-center p-4 md:p-10 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-black/98 flex items-center justify-center p-4 md:p-10 backdrop-blur-sm"
             onClick={closeLightbox}
           >
             {/* Close btn */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 text-gray-400 hover:text-neon transition-colors p-2.5 bg-zinc-950 border border-steel-border cursor-pointer select-none outline-none"
+              className="absolute top-6 right-6 text-gray-400 hover:text-neon transition-colors p-2.5 bg-zinc-950 border border-steel-border cursor-pointer select-none outline-none z-30"
               aria-label="Close lightbox"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Slider container */}
+            {/* Left Action Indicator */}
+            <button
+              onClick={prevSlide}
+              className="hidden lg:flex absolute left-8 w-12 h-12 bg-zinc-950/60 border border-steel-border/55 items-center justify-center text-gray-400 hover:text-neon hover:border-neon transition-luxury cursor-pointer z-30"
+              aria-label="Previous zone"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Centered Modal Card */}
             <div 
-              className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              className="w-full max-w-3xl flex flex-col bg-[#0A0B0B] border border-steel-border relative shadow-2xl overflow-y-auto max-h-[90vh] rounded-none scrollbar-none"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Left Action Indicator */}
-              <button
-                onClick={prevSlide}
-                className="hidden lg:flex absolute left-8 w-12 h-12 bg-zinc-950/60 border border-steel-border/55 items-center justify-center text-gray-400 hover:text-neon hover:border-neon transition-luxury cursor-pointer"
-                aria-label="Previous zone"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-
               {/* Central Dynamic Image Segment */}
-              <div className="lg:col-span-7 flex justify-center relative aspect-video w-full bg-zinc-950 border border-steel-border/80 overflow-hidden shadow-2xl">
+              <div className="relative aspect-video w-full bg-black border-b border-steel-border/50 overflow-hidden shrink-0">
                 <img
                   src={lightboxItem.imgUrl}
                   alt={lightboxItem.title}
-                  className="w-full h-full object-cover filter contrast-110 grayscale brightness-90 animate-fade-in"
+                  className="w-full h-full object-cover filter contrast-105 brightness-95 animate-fade-in select-none pointer-events-none"
                   referrerPolicy="no-referrer"
                 />
                 
                 {/* Mobile Slider Controls */}
-                <div className="absolute inset-x-0 bottom-4 flex justify-between px-4 lg:hidden">
+                <div className="absolute inset-x-4 bottom-4 flex justify-between lg:hidden z-20">
                   <button
                     onClick={prevSlide}
                     className="w-10 h-10 bg-zinc-950/80 border border-steel-border flex items-center justify-center text-white"
@@ -344,19 +354,21 @@ export default function Gallery() {
                 </div>
               </div>
 
-              {/* Data Specs Sheet Column */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-6 h-full p-2 text-left">
+              {/* Data Specs Sheet (Underneath) */}
+              <div className="flex flex-col justify-between space-y-6 p-6 md:p-8 text-left">
                 <div className="space-y-4">
-                  <div>
-                    <span className="font-mono text-[9px] bg-neon/15 border border-neon/30 text-neon px-2.5 py-1 uppercase tracking-widest inline-block mb-2">
-                      SYSTEM GRID: {lightboxItem.specs.locationCode}
-                    </span>
-                    <h3 className="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-wider mt-1 leading-none">
-                      {lightboxItem.title}
-                    </h3>
-                    <p className="font-mono text-xs text-gray-400 mt-1 uppercase">
-                      {lightboxItem.subtitle}
-                    </p>
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-steel-border/30 pb-3">
+                    <div>
+                      <span className="font-mono text-[9px] bg-neon/15 border border-neon/30 text-neon px-2.5 py-1 uppercase tracking-widest inline-block mb-1">
+                        SYSTEM GRID: {lightboxItem.specs.locationCode}
+                      </span>
+                      <h3 className="font-display text-xl sm:text-2xl font-black text-white uppercase tracking-wider mt-1 leading-none">
+                        {lightboxItem.title}
+                      </h3>
+                      <p className="font-mono text-xs text-gray-500 mt-1 uppercase">
+                        {lightboxItem.subtitle}
+                      </p>
+                    </div>
                   </div>
 
                   <p className="font-sans text-xs sm:text-sm text-gray-400 leading-relaxed font-light">
@@ -364,32 +376,32 @@ export default function Gallery() {
                   </p>
 
                   {/* Mechanical specification cards */}
-                  <div className="pt-4 border-t border-steel-border/40 space-y-2 text-xs font-mono">
-                    <span className="text-[10px] text-gray-500 uppercase block mb-1">SYSTEM SPECIFICATIONS</span>
+                  <div className="pt-2 space-y-2 text-xs font-mono">
+                    <span className="text-[9px] text-gray-500 uppercase block mb-1">SYSTEM SPECIFICATIONS</span>
                     <div className="grid grid-cols-2 gap-2">
                       <div className="bg-steel-low/80 border border-steel-border p-3">
                         <span className="text-[8px] text-gray-500 block">GRID COORDINATE</span>
-                        <span className="text-white font-bold text-[10px]">{lightboxItem.specs.locationCode}</span>
+                        <span className="text-white font-bold text-[9px]">{lightboxItem.specs.locationCode}</span>
                       </div>
                       
                       {lightboxItem.specs.temperature && (
                         <div className="bg-steel-low/80 border border-steel-border p-3">
                           <span className="text-[8px] text-gray-500 block">THERMOSTATS METRICS</span>
-                          <span className="text-neon font-bold text-[10px]">{lightboxItem.specs.temperature}</span>
+                          <span className="text-neon font-bold text-[9px]">{lightboxItem.specs.temperature}</span>
                         </div>
                       )}
 
                       {lightboxItem.specs.hardware && (
                         <div className="col-span-2 bg-steel-low/80 border border-steel-border p-3">
                           <span className="text-[8px] text-gray-500 block">HARDWARE INTEGRATION LEVEL</span>
-                          <span className="text-white font-medium text-[10px] truncate block">{lightboxItem.specs.hardware}</span>
+                          <span className="text-white font-medium text-[9px] truncate block">{lightboxItem.specs.hardware}</span>
                         </div>
                       )}
 
                       {lightboxItem.specs.biometrics && (
                         <div className="col-span-2 bg-steel-low/80 border border-steel-border p-3">
                           <span className="text-[8px] text-gray-500 block font-mono">BIOMETRIC TRACKER TELEMETRY</span>
-                          <span className="text-neon font-bold text-[10px] truncate block">{lightboxItem.specs.biometrics}</span>
+                          <span className="text-neon font-bold text-[9px] truncate block">{lightboxItem.specs.biometrics}</span>
                         </div>
                       )}
                     </div>
@@ -397,7 +409,7 @@ export default function Gallery() {
                 </div>
 
                 {/* Lightbox Nav Indicators */}
-                <div className="pt-6 border-t border-steel-border/30 flex justify-between items-center font-mono text-[10px] text-gray-600">
+                <div className="pt-6 border-t border-steel-border/30 flex justify-between items-center font-mono text-[9px] text-gray-600">
                   <span>ZONE {lightboxIndex! + 1} OF {GALLERY_ITEMS.length}</span>
                   <div className="flex gap-2.5">
                     <span className="hover:text-neon cursor-pointer" onClick={prevSlide}>[PREV]</span>
@@ -406,17 +418,16 @@ export default function Gallery() {
                   </div>
                 </div>
               </div>
-
-              {/* Right Action Indicator */}
-              <button
-                onClick={nextSlide}
-                className="hidden lg:flex absolute right-8 w-12 h-12 bg-zinc-950/60 border border-steel-border/55 items-center justify-center text-gray-400 hover:text-neon hover:border-neon transition-luxury cursor-pointer"
-                aria-label="Next zone"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
             </div>
+
+            {/* Right Action Indicator */}
+            <button
+              onClick={nextSlide}
+              className="hidden lg:flex absolute right-8 w-12 h-12 bg-zinc-950/60 border border-steel-border/55 items-center justify-center text-gray-400 hover:text-neon hover:border-neon transition-luxury cursor-pointer z-30"
+              aria-label="Next zone"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

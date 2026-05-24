@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Volt Athletic | Premium Performance Training Club
 
-# Run and deploy your AI Studio app
+A bold, modern showcase website modeling the state-of-the-art interactive reservation and biometric monitoring systems for **Volt Athletic**.
 
-This contains everything you need to run your app locally.
+[![Volt Athletic Preview](https://img.shields.io/badge/Live_Preview-Vercel-success?style=for-the-badge&logo=vercel&logoColor=white&color=C3F400&labelColor=0D0E0E)](https://volt-athletic.vercel.app)
 
-View your app in AI Studio: https://ai.studio/apps/27898c9e-751e-4686-8e43-67c904698732
+## Features
+- **Discipline Portals:** Showcasing strength training, high-altitude conditioning, tactical combat, and clinical recovery.
+- **Biometric Monitoring Ticker:** Interactive Volt App preview displaying real-time athletic data.
+- **Bento Grid Facility Gallery:** Interactive inspection of hardware grid coordinates and specifications.
+- **Trial Intake System:** Seamless scheduler modal allowing guests to register for assessments and book coaches.
+- **Premium Aesthetics:** Sleek dark-steel theme with high-contrast neon accents, fluid layout transitions, and high-fidelity animations.
 
-## Run Locally
+## Tech Stack
+- **Framework:** React + TypeScript + Vite
+- **Styling:** Tailwind CSS (v4)
+- **Animations:** Motion (Framer Motion)
+- **Icons:** Lucide React
 
-**Prerequisites:**  Node.js
-
+## Development
+To run this project locally:
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+2. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
